@@ -54,6 +54,10 @@ function Login() {
         })
     }
 
+    function guestLoginHandler() {
+        dispatch(login({ email: "rajadavid03@gmail.com", password: "1234" }))
+    }
+
     return (
         <>
             {/* <main className="w-100  mt-5" >
@@ -175,12 +179,16 @@ function Login() {
                                     </Link>
                                 </div> */}
 
-                                <div className=" mt-4 d-flex justify-content-center">
+                                <div className=" mt-4 d-flex  justify-content-center">
                                     <button className="btn btn-outline-danger w-75 p-2 fw-semibold ">Login</button>
                                 </div>
                             </form>
-                            <div className="text-center my-2">
-                                <Link to={"/signup"} className="text-secondary">Signup</Link>
+                            <div className="d-flex flex-column align-items-center text-center px-4">
+                                <p
+                                    className="btn btn-outline-danger btn-sm w-75 p-2 fw-semibold"
+                                    onClick={guestLoginHandler}
+                                >Guest</p>
+                                <Link to={"/signup"} className="text-secondary mb-2">Signup</Link>
                             </div>
                         </div>
 
