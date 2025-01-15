@@ -14,7 +14,7 @@ function MyProfile() {
 
     function logoutHandler() {
         dispatch(clearUser())
-        navigate("/dashboard")
+        navigate("/login")
     }
 
     return (
