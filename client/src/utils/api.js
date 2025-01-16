@@ -1,4 +1,5 @@
-const BASEURL = "http://localhost:3000"
+// const BASEURL = "http://localhost:3000"
+const BASEURL = "https://workasana-server-nine.vercel.app"
 
 //Auth
 export const SEND_OTP_API = BASEURL + "/auth/send-otp"
