@@ -36,11 +36,6 @@ function AddTask() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        if (status === successStatus) {
-            navigate('/dashboard')
-        }
-    },[status])
 
     // track changes to add new project, team , tag using btn
     function onChangeHandler(e) {
@@ -81,9 +76,9 @@ function AddTask() {
 
         const data = { project: formDetails.project, description: formDetails.description }
         dispatch(addNewProject(data))
-        formDetails({
+        setFormDetails({
             project: "",
-            description: ""
+            description: "",
         })
     }
 
@@ -161,9 +156,6 @@ function AddTask() {
             timeToComplete: "",
             status: "",
         }))
-
-
-
     }
 
     return (
@@ -516,13 +508,10 @@ function AddTask() {
                                         >
                                             Add New Task
                                         </p>
-
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
 
                 </section>
@@ -638,7 +627,7 @@ function AddTask() {
                         </div>
                     </div>
                 </div>
-                {/* Add new Team */}
+                {/* Add new Tag */}
                 <div className="modal fade" id="addTagModal" aria-labelledby="exampleModalLabel" >
                     <div className="modal-dialog">
                         <div className="modal-content">
@@ -695,7 +684,6 @@ function AddTask() {
             </main>
         </>
     )
-
 }
 
 export default AddTask
